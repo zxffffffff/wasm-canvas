@@ -44,10 +44,6 @@ static CanvasRenderingContext2D *canvas_getContext(HTMLCanvasElement *_this, cha
         _this->_private.ctx = createContext(_this, contextType);
     return _this->_private.ctx;
 }
-static char* canvas_getId(HTMLCanvasElement *_this)
-{
-    return _this->_private.id;
-}
 /* End: HTMLCanvasElement static methods */
 
 HTMLCanvasElement *createCanvas(char *id)
@@ -69,7 +65,6 @@ HTMLCanvasElement *createCanvas(char *id)
     c->setHeight = canvas_setHeight;
     c->setWidth = canvas_setWidth;
     c->getContext = canvas_getContext;
-    c->getId = canvas_getId;
     return c;
 }
 
